@@ -1,0 +1,655 @@
+
+R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Workspace loaded from ~/.RData]
+
+> library(readxl)
+> AirlineDataset <- read_excel("D:/sem4/A-SIN/AirlineDataset.xlsx")
+There were 50 or more warnings (use warnings() to see the first 50)
+> View(AirlineDataset)
+> df <- AirlineDataset
+> dim(df)
+[1] 14640    15
+> apply(df, 2, function(x) sum(is.na(x)))
+                    tweet_id            airline_sentiment airline_sentiment_confidence               negativereason    negativereason_confidence 
+                           0                            0                            0                         5462                         4118 
+                     airline       airline_sentiment_gold                         name          negativereason_gold                retweet_count 
+                           0                        14640                            0                        14640                            0 
+                        text                  tweet_coord                tweet_created               tweet_location                user_timezone 
+                           0                        13621                            0                         4733                         4820 
+> df %>%
++ ggplot(aes(airline_sentiment))+geom_bar(fill="tomato",color="black")+labs(x="Sentiment",y="count")
+Error in df %>% ggplot(aes(airline_sentiment)) : 
+  could not find function "%>%"
+> library(tidyverse)
+Error in library(tidyverse) : there is no package called ‘tidyverse’
+> library(plotly)
+Error in library(plotly) : there is no package called ‘plotly’
+> library(maps)
+Error in library(maps) : there is no package called ‘maps’
+> library(rbokeh)
+Error in library(rbokeh) : there is no package called ‘rbokeh’
+> library(widgetframe)
+Error in library(widgetframe) : there is no package called ‘widgetframe’
+> library(htmlwidgets)
+Error in library(htmlwidgets) : there is no package called ‘htmlwidgets’
+> library(ggplot2)
+> df %>%
++ ggplot(aes(airline_sentiment))+geom_bar(fill="tomato",color="black")+labs(x="Sentiment",y="count")
+Error in df %>% ggplot(aes(airline_sentiment)) : 
+  could not find function "%>%"
+> ggplot(aes(airline_sentiment))+geom_bar(fill="tomato",color="black")+labs(x="Sentiment",y="count")
+Error: `data` must be a data frame, or other object coercible by `fortify()`, not an S3 object with class uneval
+Did you accidentally pass `aes()` to the `data` argument?
+Run `rlang::last_error()` to see where the error occurred.
+> cls
+Error: object 'cls' not found
+> clear
+Error: object 'clear' not found
+> df %>%
++ ggplot(aes(airline_sentiment))+
++ 
++ 
++ 
++ 
++ 
++ ggplot(aes(airline_sentiment)
++ 
++ 
++ alsc
+Error: unexpected symbol in:
+"
+alsc"
+> df %>%
++ ggplot(aes(airline_sentiment))
+Error in df %>% ggplot(aes(airline_sentiment)) : 
+  could not find function "%>%"
+> df %>%
++ ggplot(aes(airline_sentiment))+
++ geom_bar(fill="tomato",color="black")+
++ labs(x="Sentiment",y="count")
+Error in df %>% ggplot(aes(airline_sentiment)) : 
+  could not find function "%>%"
+
+Restarting R session...
+
+> install.packages("tidyverse")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/HARSHIT/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘sys’, ‘base64enc’, ‘rappdirs’, ‘askpass’, ‘processx’, ‘highr’, ‘markdown’, ‘yaml’, ‘xfun’, ‘htmltools’, ‘tinytex’, ‘backports’, ‘lifecycle’, ‘data.table’, ‘curl’, ‘gargle’, ‘uuid’, ‘ids’, ‘mime’, ‘openssl’, ‘clipr’, ‘callr’, ‘fs’, ‘knitr’, ‘rmarkdown’, ‘selectr’, ‘broom’, ‘cli’, ‘crayon’, ‘dbplyr’, ‘dplyr’, ‘dtplyr’, ‘forcats’, ‘googledrive’, ‘googlesheets4’, ‘haven’, ‘httr’, ‘lubridate’, ‘modelr’, ‘pillar’, ‘readr’, ‘reprex’, ‘rvest’, ‘tibble’, ‘tidyr’, ‘xml2’
+
+
+  There is a binary version available but the source version is later:
+      binary source needs_compilation
+dplyr  1.0.5  1.0.6              TRUE
+
+  Binaries will be installed
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/sys_3.4.zip'
+Content type 'application/zip' length 59814 bytes (58 KB)
+downloaded 58 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/base64enc_0.1-3.zip'
+Content type 'application/zip' length 43016 bytes (42 KB)
+downloaded 42 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/rappdirs_0.3.3.zip'
+Content type 'application/zip' length 58766 bytes (57 KB)
+downloaded 57 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/askpass_1.1.zip'
+Content type 'application/zip' length 243570 bytes (237 KB)
+downloaded 237 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/processx_3.5.2.zip'
+Content type 'application/zip' length 1246565 bytes (1.2 MB)
+downloaded 1.2 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/highr_0.9.zip'
+Content type 'application/zip' length 46577 bytes (45 KB)
+downloaded 45 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/markdown_1.1.zip'
+Content type 'application/zip' length 188723 bytes (184 KB)
+downloaded 184 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/yaml_2.2.1.zip'
+Content type 'application/zip' length 207829 bytes (202 KB)
+downloaded 202 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/xfun_0.22.zip'
+Content type 'application/zip' length 329317 bytes (321 KB)
+downloaded 321 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/htmltools_0.5.1.1.zip'
+Content type 'application/zip' length 243465 bytes (237 KB)
+downloaded 237 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/tinytex_0.31.zip'
+Content type 'application/zip' length 120380 bytes (117 KB)
+downloaded 117 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/backports_1.2.1.zip'
+Content type 'application/zip' length 98506 bytes (96 KB)
+downloaded 96 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/lifecycle_1.0.0.zip'
+Content type 'application/zip' length 111210 bytes (108 KB)
+downloaded 108 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/data.table_1.14.0.zip'
+Content type 'application/zip' length 2603341 bytes (2.5 MB)
+downloaded 2.5 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/curl_4.3.1.zip'
+Content type 'application/zip' length 4248001 bytes (4.1 MB)
+downloaded 4.1 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/gargle_1.1.0.zip'
+Content type 'application/zip' length 466549 bytes (455 KB)
+downloaded 455 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/uuid_0.1-4.zip'
+Content type 'application/zip' length 33765 bytes (32 KB)
+downloaded 32 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/ids_1.0.1.zip'
+Content type 'application/zip' length 123879 bytes (120 KB)
+downloaded 120 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/mime_0.10.zip'
+Content type 'application/zip' length 48442 bytes (47 KB)
+downloaded 47 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/openssl_1.4.4.zip'
+Content type 'application/zip' length 4101661 bytes (3.9 MB)
+downloaded 3.9 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/clipr_0.7.1.zip'
+Content type 'application/zip' length 52604 bytes (51 KB)
+downloaded 51 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/callr_3.7.0.zip'
+Content type 'application/zip' length 439826 bytes (429 KB)
+downloaded 429 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/fs_1.5.0.zip'
+Content type 'application/zip' length 606176 bytes (591 KB)
+downloaded 591 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/knitr_1.33.zip'
+Content type 'application/zip' length 1459595 bytes (1.4 MB)
+downloaded 1.4 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/rmarkdown_2.8.zip'
+Content type 'application/zip' length 3692309 bytes (3.5 MB)
+downloaded 3.5 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/selectr_0.4-2.zip'
+Content type 'application/zip' length 488574 bytes (477 KB)
+downloaded 477 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/broom_0.7.6.zip'
+Content type 'application/zip' length 1791179 bytes (1.7 MB)
+downloaded 1.7 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/cli_2.5.0.zip'
+Content type 'application/zip' length 534118 bytes (521 KB)
+downloaded 521 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/crayon_1.4.1.zip'
+Content type 'application/zip' length 141814 bytes (138 KB)
+downloaded 138 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/dbplyr_2.1.1.zip'
+Content type 'application/zip' length 834575 bytes (815 KB)
+downloaded 815 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/dplyr_1.0.5.zip'
+Content type 'application/zip' length 1335085 bytes (1.3 MB)
+downloaded 1.3 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/dtplyr_1.1.0.zip'
+Content type 'application/zip' length 242671 bytes (236 KB)
+downloaded 236 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/forcats_0.5.1.zip'
+Content type 'application/zip' length 358082 bytes (349 KB)
+downloaded 349 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/googledrive_1.0.1.zip'
+Content type 'application/zip' length 1770203 bytes (1.7 MB)
+downloaded 1.7 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/googlesheets4_0.3.0.zip'
+Content type 'application/zip' length 479393 bytes (468 KB)
+downloaded 468 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/haven_2.4.1.zip'
+Content type 'application/zip' length 1280894 bytes (1.2 MB)
+downloaded 1.2 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/httr_1.4.2.zip'
+Content type 'application/zip' length 517313 bytes (505 KB)
+downloaded 505 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/lubridate_1.7.10.zip'
+Content type 'application/zip' length 1754774 bytes (1.7 MB)
+downloaded 1.7 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/modelr_0.1.8.zip'
+Content type 'application/zip' length 202930 bytes (198 KB)
+downloaded 198 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/pillar_1.6.0.zip'
+Content type 'application/zip' length 1016285 bytes (992 KB)
+downloaded 992 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/readr_1.4.0.zip'
+Content type 'application/zip' length 1823488 bytes (1.7 MB)
+downloaded 1.7 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/reprex_2.0.0.zip'
+Content type 'application/zip' length 499929 bytes (488 KB)
+downloaded 488 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/rvest_1.0.0.zip'
+Content type 'application/zip' length 205989 bytes (201 KB)
+downloaded 201 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/tibble_3.1.1.zip'
+Content type 'application/zip' length 825910 bytes (806 KB)
+downloaded 806 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/tidyr_1.1.3.zip'
+Content type 'application/zip' length 1055388 bytes (1.0 MB)
+downloaded 1.0 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/xml2_1.3.2.zip'
+Content type 'application/zip' length 3005803 bytes (2.9 MB)
+downloaded 2.9 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/tidyverse_1.3.1.zip'
+Content type 'application/zip' length 429960 bytes (419 KB)
+downloaded 419 KB
+
+package ‘sys’ successfully unpacked and MD5 sums checked
+package ‘base64enc’ successfully unpacked and MD5 sums checked
+package ‘rappdirs’ successfully unpacked and MD5 sums checked
+package ‘askpass’ successfully unpacked and MD5 sums checked
+package ‘processx’ successfully unpacked and MD5 sums checked
+package ‘highr’ successfully unpacked and MD5 sums checked
+package ‘markdown’ successfully unpacked and MD5 sums checked
+package ‘yaml’ successfully unpacked and MD5 sums checked
+package ‘xfun’ successfully unpacked and MD5 sums checked
+package ‘htmltools’ successfully unpacked and MD5 sums checked
+package ‘tinytex’ successfully unpacked and MD5 sums checked
+package ‘backports’ successfully unpacked and MD5 sums checked
+package ‘lifecycle’ successfully unpacked and MD5 sums checked
+package ‘data.table’ successfully unpacked and MD5 sums checked
+package ‘curl’ successfully unpacked and MD5 sums checked
+package ‘gargle’ successfully unpacked and MD5 sums checked
+package ‘uuid’ successfully unpacked and MD5 sums checked
+package ‘ids’ successfully unpacked and MD5 sums checked
+package ‘mime’ successfully unpacked and MD5 sums checked
+package ‘openssl’ successfully unpacked and MD5 sums checked
+package ‘clipr’ successfully unpacked and MD5 sums checked
+package ‘callr’ successfully unpacked and MD5 sums checked
+package ‘fs’ successfully unpacked and MD5 sums checked
+package ‘knitr’ successfully unpacked and MD5 sums checked
+package ‘rmarkdown’ successfully unpacked and MD5 sums checked
+package ‘selectr’ successfully unpacked and MD5 sums checked
+package ‘broom’ successfully unpacked and MD5 sums checked
+package ‘cli’ successfully unpacked and MD5 sums checked
+package ‘crayon’ successfully unpacked and MD5 sums checked
+package ‘dbplyr’ successfully unpacked and MD5 sums checked
+package ‘dplyr’ successfully unpacked and MD5 sums checked
+package ‘dtplyr’ successfully unpacked and MD5 sums checked
+package ‘forcats’ successfully unpacked and MD5 sums checked
+package ‘googledrive’ successfully unpacked and MD5 sums checked
+package ‘googlesheets4’ successfully unpacked and MD5 sums checked
+package ‘haven’ successfully unpacked and MD5 sums checked
+package ‘httr’ successfully unpacked and MD5 sums checked
+package ‘lubridate’ successfully unpacked and MD5 sums checked
+package ‘modelr’ successfully unpacked and MD5 sums checked
+package ‘pillar’ successfully unpacked and MD5 sums checked
+package ‘readr’ successfully unpacked and MD5 sums checked
+package ‘reprex’ successfully unpacked and MD5 sums checked
+package ‘rvest’ successfully unpacked and MD5 sums checked
+package ‘tibble’ successfully unpacked and MD5 sums checked
+package ‘tidyr’ successfully unpacked and MD5 sums checked
+package ‘xml2’ successfully unpacked and MD5 sums checked
+package ‘tidyverse’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\HARSHIT\AppData\Local\Temp\RtmpEtQzRf\downloaded_packages
+> install.packages("plotly")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/HARSHIT/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘later’, ‘htmlwidgets’, ‘lazyeval’, ‘crosstalk’, ‘promises’
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/later_1.2.0.zip'
+Content type 'application/zip' length 853593 bytes (833 KB)
+downloaded 833 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/htmlwidgets_1.5.3.zip'
+Content type 'application/zip' length 278387 bytes (271 KB)
+downloaded 271 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/lazyeval_0.2.2.zip'
+Content type 'application/zip' length 172650 bytes (168 KB)
+downloaded 168 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/crosstalk_1.1.1.zip'
+Content type 'application/zip' length 785560 bytes (767 KB)
+downloaded 767 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/promises_1.2.0.1.zip'
+Content type 'application/zip' length 2313934 bytes (2.2 MB)
+downloaded 2.2 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/plotly_4.9.3.zip'
+Content type 'application/zip' length 3121976 bytes (3.0 MB)
+downloaded 3.0 MB
+
+package ‘later’ successfully unpacked and MD5 sums checked
+package ‘htmlwidgets’ successfully unpacked and MD5 sums checked
+package ‘lazyeval’ successfully unpacked and MD5 sums checked
+package ‘crosstalk’ successfully unpacked and MD5 sums checked
+package ‘promises’ successfully unpacked and MD5 sums checked
+package ‘plotly’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\HARSHIT\AppData\Local\Temp\RtmpEtQzRf\downloaded_packages
+> install.packages("maps")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/HARSHIT/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/maps_3.3.0.zip'
+Content type 'application/zip' length 3693853 bytes (3.5 MB)
+downloaded 3.5 MB
+
+package ‘maps’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\HARSHIT\AppData\Local\Temp\RtmpEtQzRf\downloaded_packages
+> install.packages("rbokeh")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/HARSHIT/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘triebeard’, ‘urltools’, ‘httpcode’, ‘crul’, ‘hexbin’, ‘pryr’, ‘gistr’
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/triebeard_0.3.0.zip'
+Content type 'application/zip' length 928020 bytes (906 KB)
+downloaded 906 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/urltools_1.7.3.zip'
+Content type 'application/zip' length 1069859 bytes (1.0 MB)
+downloaded 1.0 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/httpcode_0.3.0.zip'
+Content type 'application/zip' length 34961 bytes (34 KB)
+downloaded 34 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/crul_1.1.0.zip'
+Content type 'application/zip' length 643616 bytes (628 KB)
+downloaded 628 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/hexbin_1.28.2.zip'
+Content type 'application/zip' length 1475017 bytes (1.4 MB)
+downloaded 1.4 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/pryr_0.1.4.zip'
+Content type 'application/zip' length 937156 bytes (915 KB)
+downloaded 915 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/gistr_0.9.0.zip'
+Content type 'application/zip' length 778973 bytes (760 KB)
+downloaded 760 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/rbokeh_0.5.1.zip'
+Content type 'application/zip' length 1287387 bytes (1.2 MB)
+downloaded 1.2 MB
+
+package ‘triebeard’ successfully unpacked and MD5 sums checked
+package ‘urltools’ successfully unpacked and MD5 sums checked
+package ‘httpcode’ successfully unpacked and MD5 sums checked
+package ‘crul’ successfully unpacked and MD5 sums checked
+package ‘hexbin’ successfully unpacked and MD5 sums checked
+package ‘pryr’ successfully unpacked and MD5 sums checked
+package ‘gistr’ successfully unpacked and MD5 sums checked
+package ‘rbokeh’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\HARSHIT\AppData\Local\Temp\RtmpEtQzRf\downloaded_packages
+> install.packages("widgetframe")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/HARSHIT/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/widgetframe_0.3.1.zip'
+Content type 'application/zip' length 71084 bytes (69 KB)
+downloaded 69 KB
+
+package ‘widgetframe’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\HARSHIT\AppData\Local\Temp\RtmpEtQzRf\downloaded_packages
+> install.packages("htmlwidgets")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/HARSHIT/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/htmlwidgets_1.5.3.zip'
+Content type 'application/zip' length 278387 bytes (271 KB)
+downloaded 271 KB
+
+package ‘htmlwidgets’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\HARSHIT\AppData\Local\Temp\RtmpEtQzRf\downloaded_packages
+> library(tidyverse)
+-- Attaching packages ------------------------------------------------------------------------------------------------------------------------ tidyverse 1.3.1 --
+v ggplot2 3.3.3     v purrr   0.3.4
+v tibble  3.1.1     v dplyr   1.0.5
+v tidyr   1.1.3     v stringr 1.4.0
+v readr   1.4.0     v forcats 0.5.1
+-- Conflicts --------------------------------------------------------------------------------------------------------------------------- tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+Warning messages:
+1: package ‘tidyverse’ was built under R version 4.0.5 
+2: package ‘tibble’ was built under R version 4.0.5 
+3: package ‘tidyr’ was built under R version 4.0.5 
+4: package ‘readr’ was built under R version 4.0.5 
+5: package ‘dplyr’ was built under R version 4.0.5 
+6: package ‘forcats’ was built under R version 4.0.5 
+> library(plotly)
+
+Attaching package: ‘plotly’
+
+The following object is masked from ‘package:ggplot2’:
+
+    last_plot
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+The following object is masked from ‘package:graphics’:
+
+    layout
+
+Warning message:
+package ‘plotly’ was built under R version 4.0.5 
+> library(maps)
+
+Attaching package: ‘maps’
+
+The following object is masked from ‘package:purrr’:
+
+    map
+
+Warning message:
+package ‘maps’ was built under R version 4.0.5 
+> library(rbokeh)
+Registered S3 method overwritten by 'pryr':
+  method      from
+  print.bytes Rcpp
+Warning message:
+package ‘rbokeh’ was built under R version 4.0.5 
+> library(widgetframe)
+Loading required package: htmlwidgets
+Warning messages:
+1: package ‘widgetframe’ was built under R version 4.0.5 
+2: package ‘htmlwidgets’ was built under R version 4.0.5 
+> library(htmlwidgets)
+> df %>%
++     ggplot(aes(airline_sentiment))+
++     geom_bar(fill = "tomato", color = "black")+
++     labs(x = "Airline Sentiment", y = "Count")
+> df %>%
++     ggplot(aes(airline_sentiment))+
++     geom_bar(aes(fill = airline))+
++     labs(x = "Airline Sentiment", y = "Count", fill = "Airlines")
+> df %>%
++     count(airline, airline_sentiment) %>%
++     ggplot(aes(airline, n))+
++     geom_bar(stat = "identity", colour = "grey19", fill = "skyblue")+
++     facet_wrap(~airline_sentiment, ncol = 2)+
++     theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9))+
++     labs(x = "Airlines", y = "Count of Tweet Sentiments")
+> df %>%
++     group_by(airline, airline_sentiment) %>%
++     summarise(
++         mean_airline_sentiment = mean(airline_sentiment_confidence, na.rm = TRUE)
++     ) %>%
++     ggplot(aes(airline_sentiment, mean_airline_sentiment))+
++     geom_bar(stat = "identity", fill = "tomato", color = "black")+
++     facet_wrap(~airline, ncol = 2)+
++     labs(x = "Airline Sentiment", y = "Mean Airline Sentiment Confidence")
+`summarise()` has grouped output by 'airline'. You can override using the `.groups` argument.
+> df %>%
++     ggplot(aes(negativereason))+
++     geom_bar(fill = "violetred3", color = "black")+
++     theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9))+
++     labs(x = "Negative Reasons", y = "Count of Negative Reasons")
+> df %>%
++     filter(!is.na(negativereason)) %>%
++     count(airline, negativereason) %>%
++     ggplot(aes(negativereason, n))+
++     geom_bar(stat = "identity", colour = "grey19", fill = "springgreen4")+
++     facet_wrap(~airline, ncol = 3)+
++     theme(axis.text.x = element_text(angle = 30, hjust = 1, size = 9))+
++     labs(x = "Negative Reasons", y = "Count of Negative Reasons")
+> df %>%
++     filter(!is.na(negativereason)) %>%
++     count(airline, negativereason) %>%
++     ggplot(aes(airline, n))+
++     geom_bar(stat = "identity", colour = "grey19", fill = "springgreen4")+
++     facet_wrap(~negativereason, ncol = 3)+
++     theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 9))+
++     labs(x = "Airlines", y = "Count of Negative Reasons")
+> df %>%
++     filter(!is.na(negativereason)) %>%
++     count(airline, negativereason) %>%
++     ggplot(aes(airline, negativereason))+
++     geom_tile(aes(fill = n))
+> df %>%
++     filter(!is.na(negativereason)) %>%
++     group_by(negativereason) %>%
++     summarise(
++         mean_confidence = mean(negativereason_confidence, na.rm = TRUE)
++     ) %>%
++     ggplot(aes(negativereason, mean_confidence))+
++     geom_bar(stat = "identity", color = "black", fill = "skyblue")+
++     theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9))+
++     labs(x = "Negative Reasons", y = "Mean Negative Confidence")
+> df %>%
++     filter(!is.na(negativereason)) %>%
++     group_by(airline, negativereason) %>%
++     summarise(
++         mean_confidence = mean(negativereason_confidence, na.rm = TRUE)
++     ) %>%
++     ggplot(aes(negativereason, mean_confidence))+
++     geom_bar(stat = "identity", colour = "grey19", fill = "springgreen4")+
++     facet_wrap(~airline, ncol = 3)+
++     theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9))+
++     labs(x = "Negative Reasons", y = "Mean Confidence in Negative Reasons")
+`summarise()` has grouped output by 'airline'. You can override using the `.groups` argument.
+> df %>%
++     group_by(airline_sentiment) %>%
++     summarise(
++         number_of_retweets = sum(retweet_count, na.rm = TRUE)
++     )
+# A tibble: 3 x 2
+  airline_sentiment number_of_retweets
+  <chr>                          <dbl>
+1 negative                         857
+2 neutral                          189
+3 positive                         164
+> df %>%
++     group_by(airline, airline_sentiment) %>%
++     summarise(
++         number_of_tweets = sum(retweet_count, na.rm = TRUE)
++     ) %>%
++     ggplot(aes(airline, number_of_tweets))+
++     geom_bar(aes(fill = airline_sentiment), stat = "identity", position = "dodge")+
++     labs(x = "Airlines", y = "Number of Retweets", fill = "Tweet Sentiment")
+`summarise()` has grouped output by 'airline'. You can override using the `.groups` argument.
+> df %>%
++     group_by(airline, airline_sentiment) %>%
++     summarise(
++         number_of_tweets = sum(retweet_count, na.rm = TRUE)
++     ) %>%
++     ggplot(aes(airline, airline_sentiment))+
++     geom_tile(aes(fill = number_of_tweets))+
++     labs(x = "Airlines", y = "Number of Retweets", fill = "Tweet Sentiment")
+`summarise()` has grouped output by 'airline'. You can override using the `.groups` argument.
+> df %>%
++     filter(airline == "United") %>%
++     group_by(negativereason) %>%
++     summarise(
++         n_retweets = sum(retweet_count, na.rm = TRUE)
++     ) %>%
++     ggplot(aes(negativereason, n_retweets))+
++     geom_bar(stat = "identity", fill = "skyblue", color = "black")+
++     theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10))+
++     labs(x = "Negative Reasons", y = "Number of Retweets")
+> options(repr.plot.width = 10, repr.plot.height = 7)
+> require(maps)
+> states <- map_data("state")
+> ggplot()+
++     geom_polygon(data = states, aes(x = long, y = lat, group = group), colour="black", fill = 'lightblue')+ 
++     ggtitle("Location of tweets across the United States")+
++     geom_point(data = location_2, aes(x = long, y = lat, size = n), color="coral1") + scale_size(name="Total Tweets")+
++     xlim(-125, -65) + ylim(25, 50)
+Error in fortify(data) : object 'location_2' not found
+> 
