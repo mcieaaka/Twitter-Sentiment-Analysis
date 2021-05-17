@@ -57,7 +57,8 @@ barplot(
 
 #network of Terms
 library(igraph) 
-tdm[tdm>1]<-1 
+#tdm[tdm>1]<-1 
+tdm <- tdm[names(tail(sort(rowSums(as.matrix(tdm))), 50)), ]
 termM<- as.matrix(tdm) %*% as.matrix(t(tdm))
 g<-graph.adjacency(termM, weighted = T, mode = 'undirected') 
 g
@@ -82,22 +83,24 @@ plot(g,vertex.color = "orange" , vertex.size = 6 , vertex.label.dist = 1.5 ,vert
 
 #CommunityDetection
 #Edge BetweenNess
-#comm <- cluster_edge_betweenness(g)
-#plot(comm,g)
+comm <- cluster_edge_betweenness(g)
+plot(comm,g)
+C2<-estimate_edge_betweenness(g,cutoff = 10)
+plot(C2)
 
 #Using propagative lables 
 prop <- cluster_label_prop(g) 
 plot(prop,g)
 
 #greedy optimization
-#greed <- cluster_edge_betweenness(as.undirected(g)) 
-#plot(greed, as.undirected(g))
-C1<-cluster_fast_greedy(g)
-plot(C1,g)
+greed <- cluster_edge_betweenness(as.undirected(g)) 
+plot(greed, as.undirected(g))
+#C1<-cluster_fast_greedy(g)
+#plot(C1,g)
 
 
-C2<-estimate_edge_betweenness(g,cutoff = 10)
-summary(C2)
-C3<-C2[C2<max(C2)]
-plot(C3)
+#C2<-estimate_edge_betweenness(g,cutoff = 10)
+#summary(C2)
+#C3<-C2[C2<max(C2)]
+#plot(C3)
 
