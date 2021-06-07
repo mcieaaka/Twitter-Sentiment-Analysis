@@ -14,6 +14,9 @@ library(cowplot)
 library(reshape2)
 library(scales)
 library(NLP)
+library(readxl)
+Dataset <- read_excel("D:/sem4/A-SIN/PROJECT/Dataset.xlsx")
+
 
 airline<-Dataset
 str(airline)
